@@ -9,7 +9,7 @@
  * Use the debugging techniques discussed in the course articles to help identify and fix issues.
  */
 
-document.getElementById('validationForm').addEventListener('submit', function(event) {
+document.getElementById('validationForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent form submission
 
     // Clear previous error messages and result message
@@ -20,7 +20,7 @@ document.getElementById('validationForm').addEventListener('submit', function(ev
         console.log('Form submission started'); // Console debugging simple message
         // Validate the form
         validateForm();
-        
+
         // If no errors, display success message
         document.getElementById('resultMessage').textContent = 'Form submitted successfully!';
         document.getElementById('resultMessage').classList.remove('error');
@@ -31,17 +31,17 @@ document.getElementById('validationForm').addEventListener('submit', function(ev
         document.getElementById('resultMessage').textContent = 'Form validation failed. Please fix the errors and try again.';
         document.getElementById('resultMessage').classList.add('error');
     } finally {
-        // TODO: Add console debugging for 'Validation attempt finished.'
+        console.debug('Validation attempt finished')
     }
 });
 
 // Function: Clear Previous Error Messages
 function clearErrors() {
-    // TODO: Add console debugging for 'Clearing error messages'
+    console.debug('Clearing Error Messages')
     // Clear error from nameError on form
     document.getElementById('nameError').textContent = '';
     // TODO: Clear error from emailError on form
-    
+
     // TODO: Clear error from passwordError on form
 
     // TODO: Clear error from confirmPasswordError on form
@@ -73,7 +73,7 @@ function validateForm() {
 
 // Function: Custom Email Validation
 function validateEmail(email) {
-    // TODO: Add console debugging for 'Validating email:' and the email value
+    console.debug('Validating Email')
     // Regular expression to check email format
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -81,7 +81,7 @@ function validateEmail(email) {
 
 // Function: Display Validation Errors
 function handleValidationError(error) {
-    // TODO: Add console debugging for 'Handling validation error:' and the error message
+    console.debug('Handling validation error: ' + error)
     // Display specific error messages
     switch (error.message) {
         case 'Name is required':
@@ -94,6 +94,6 @@ function handleValidationError(error) {
         // TODO: Add case for 'Passwords do not match' error
 
         default:
-            // TODO: Add console.error() debugging for 'Unknown validation error:' and the error value
+        console.error('Unknown validation error: ' + error)
     }
 }
