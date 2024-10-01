@@ -38,13 +38,12 @@ document.getElementById('validationForm').addEventListener('submit', function (e
 // Function: Clear Previous Error Messages
 function clearErrors() {
     console.debug('Clearing Error Messages')
-    // Clear error from nameError on form
+    
+    // Clear error from all errors on form
     document.getElementById('nameError').textContent = '';
-    // TODO: Clear error from emailError on form
-
-    // TODO: Clear error from passwordError on form
-
-    // TODO: Clear error from confirmPasswordError on form
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('passwordError').textContent = '';
+    document.getElementById('confirmPasswordError').textContent = '';
 }
 
 // Function: Validate Form Data
