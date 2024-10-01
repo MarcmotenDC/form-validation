@@ -63,7 +63,7 @@ function validateForm() {
     if(!validateEmail(email)) {
         throw new Error('Invalid email format')
     }
-    if(password.length > 8) {
+    if(password.length < 8) {
         throw new Error('Password must be at least 8 characters long')
     }
     if (password != confirmPassword) {
